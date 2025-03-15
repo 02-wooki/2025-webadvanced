@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자기소개</title>
+
+  <link rel="stylesheet" href="introduce02.css">
+  <script src="introduce02.js"></script>
+</head>
+<body onload="setup()">
+  <div class="appContainer">
+    <section class="profile">
+      <div class="profileImgContainer">
+        <img src="./images/IMG_4836.jpeg" alt="" onclick="document.location = './images/IMG_4836.jpeg'">
+      </div>
+      <div id="profileText" class="text">
+        <div>
+          <h1 class="title">Hyunwook Sung <span class="subText">성현욱</span></h1>
+          <div>웹 개발자</div>
+        </div>
+        <div>
+          <div>2002.09.05</div>
+          <div>경상남도 창원시 <span class="subText">출생</span></div>
+          <div>경성대학교 소프트웨어학과 <span class="subText">재학</span></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h1 class="title">Carrer  <span class="subText">경력</span></h1>
+      <ul class="text">
+        <li><span class="subText">2014</span> 진해중앙초등학교 졸업</li>
+        <li><span class="subText">2016</span> 진해남중학교 동아리 'Code' 회장 역임</li>
+        <li><span class="subText">2017</span> 진해남중학교 졸업</li>
+        <li><span class="subText">2021</span> 진해중앙고등학교 졸업</li>
+        <li><span class="subText">2024</span> 겨울방학 todo 웹 프로젝트 프론트엔드 참여</li>
+        <li><span class="subText">2025</span> 경성대학교 소프트웨어학과 부학회장 역임</li>
+        <li><span class="subText">2025</span> 리액트 네이티브 SNS 앱 프로젝트 백엔드 참여</li>
+        <li><span class="subText">2027</span> 경성대학교 소프트웨어학과 졸업 예정</li>
+      </ul>
+    </section>
+    <div id="cardSection">
+      <section class="cardContainer">
+        <div class="cardImgContainer"><img src="./images/mineSweeper.png" alt=""></div>
+        <a href="https://02-wooki.github.io/mineSweeper/"><button class="cardButton">지뢰찾기 하러가기</button></a>
+      </section>
+      <section class="cardContainer">
+        <div class="cardImgContainer"><img src="./images/portfolioImg1.png" alt=""></div>
+        <button class="cardButton disAbled">투두 (서비스 종료)</button>
+      </section>
+      <section class="cardContainer">
+        <div class="cardImgContainer"><img src="./images/portfolioImg3.png" alt=""></div>
+        <button class="cardButton disAbled">메모 (서비스 종료)</button>
+      </section>
+    </div>
+    <section class="contact">
+      <h1 class="title">Contact <span class="subText">연락처</span></h1>
+      <a href="mailto:hyunwook02@icloud.com"><span class="subText">Email </span> hyunwook02@icloud.com</a>
+      <a href="tel:01066487274"><span class="subText">Phone</span> 010 6648 7274</a>
+      <a href="https://github.com/02-wooki"><span class="subText">Github</span> 02-wooki</a>
+    </section>
+  </div>
+</body>
+</html>

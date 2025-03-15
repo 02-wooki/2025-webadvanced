@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자기소개</title>
+
+  <style>
+    /* fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Permanent+Marker&display=swap');
+    
+    body {
+      font-family: "Nanum Gothic";
+      font-weight: 600;
+      font-size: 0.95rem;
+
+      background-color: #334;
+    }
+
+    .appContainer {
+      display: flex;
+      flex-direction: column;
+
+      width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      padding: 20px 40px;
+      margin: 10px 10px;
+
+      background-color: #fff;
+      border-radius: 15px;
+
+      transition: all 0.5s ease;
+
+      box-shadow: 0px 0px 10px -3px #000;
+      cursor: default;
+    }
+
+    section:hover {
+      box-shadow: 0px 0px 40px -5px #000;
+
+      transition: all 0.5s ease;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .profile {
+      display: flex;
+    }
+
+    .profileImgContainer {
+      width: 200px;
+      height: 200px;
+
+      margin: 10px 30px;
+
+      border-radius: 100px;
+
+      overflow: hidden;
+      object-fit: cover;
+
+      cursor: pointer;
+    }
+
+    .profileImgContainer img {
+      height: 200px;
+      margin-left: -50px;
+    }
+
+    .text {
+      color: #555;
+      font-weight: 700;
+    }
+
+    .title {
+      color: #222;
+      font-family: 'Permanent Marker', cursive;
+      font-weight: 400;
+      font-size: 2rem;
+      margin: 0px 0px 6px 0px;
+    }
+
+    .subText {
+      color: #444;
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+
+    #profileText {
+      display: flex;
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      margin: 20px 0px;
+    }
+    #profileText > div > div {
+      margin: 8px 0px 0px 4px;
+    }
+
+    #cardSection {
+      display: flex;
+    }
+
+    .cardContainer {
+      width: 320px;
+      padding: 0px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      overflow: hidden;
+    }
+
+    .cardImgContainer {
+      object-fit: cover;
+      overflow: hidden;
+    }
+
+    .cardImgContainer img {
+      width: 330px;
+    }
+    
+    .cardButton {
+      margin: 15px 20px;
+      padding: 15px 50px;
+
+      background-color: #67f;
+      color: #fff;
+
+      font-weight: 700;
+      font-family: 'Nanum Gothic';
+      
+      border-radius: 15px;
+      border: 0px solid black;
+
+      cursor: pointer;
+    }
+
+    .disAbled {
+      background: #888;
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact a {
+      margin: 10px 0px 5px 0px;
+
+      text-decoration: none;
+      color: #33a;
+
+      transform: scale(1) translateX(0px);
+      transition: all ease 0.5s;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+      text-decoration-color: #67f;
+
+      transform: scale(1.05) translateX(30px);
+      transition: all ease 0.5s;
+    }
+  </style>
+  <script>
+    let cards;
+    let targetCard;
+    
+    const setup = () => {
+      cards = document.getElementsByTagName('section');
+      for (const card of cards) {
+        card.addEventListener('mousemove', (e) => rotateCard(e));
+        card.addEventListener('mouseenter', (e) => {
+          targetCard = e.target;
+        })
+        card.addEventListener('mouseleave', (e) => {
+          targetCard.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+          targetCard = undefined;
+        })
+      }
+    }
+
+    const rotateCard = (e) => {
+      let mouseX = e.offsetX;
+      let mouseY = e.offsetY;
+      
+      let centerCardX = e.target.offsetWidth / 2 - mouseX;
+      let centerCardY = e.target.offsetHeight / 2 - mouseY;
+
+      if (targetCard)
+        targetCard.style.transform = `perspective(4000px) rotateX(${-(centerCardY/24)}deg) rotateY(${(centerCardX/34)}deg) scale(1.03)`;
+    }
+  </script>
+</head>
+<body onload="setup()">
+  <div class="appContainer">
+    <section class="profile">
+      <div class="profileImgContainer">
+        <img src="./images/IMG_4836.jpeg" alt="" onclick="document.location = './images/IMG_4836.jpeg'">
+      </div>
+      <div id="profileText" class="text">
+        <div>
+          <h1 class="title">Hyunwook Sung <span class="subText">성현욱</span></h1>
+          <div>웹 개발자</div>
+        </div>
+        <div>
+          <div>2002.09.05</div>
+          <div>경상남도 창원시 <span class="subText">출생</span></div>
+          <div>경성대학교 소프트웨어학과 <span class="subText">재학</span></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h1 class="title">Carrer  <span class="subText">경력</span></h1>
+      <ul class="text">
+        <li><span class="subText">2014</span> 진해중앙초등학교 졸업</li>
+        <li><span class="subText">2016</span> 진해남중학교 동아리 'Code' 회장 역임</li>
+        <li><span class="subText">2017</span> 진해남중학교 졸업</li>
+        <li><span class="subText">2021</span> 진해중앙고등학교 졸업</li>
+        <li><span class="subText">2024</span> 겨울방학 todo 웹 프로젝트 프론트엔드 참여</li>
+        <li><span class="subText">2025</span> 경성대학교 소프트웨어학과 부학회장 역임</li>
+        <li><span class="subText">2025</span> 리액트 네이티브 SNS 앱 프로젝트 백엔드 참여</li>
+        <li><span class="subText">2027</span> 경성대학교 소프트웨어학과 졸업 예정</li>
+      </ul>
+    </section>
+    <div id="cardSection">
+      <section class="cardContainer">
+        <div class="cardImgContainer"><img src="./images/mineSweeper.png" alt=""></div>
+        <a href="https://02-wooki.github.io/mineSweeper/"><button class="cardButton">지뢰찾기 하러가기</button></a>
+      </section>
+      <section class="cardContainer">
+        <div class="cardImgContainer"><img src="./images/portfolioImg1.png" alt=""></div>
+        <button class="cardButton disAbled">투두 (서비스 종료)</button>
+      </section>
+      <section class="cardContainer">
+        <div class="cardImgContainer"><img src="./images/portfolioImg3.png" alt=""></div>
+        <button class="cardButton disAbled">메모 (서비스 종료)</button>
+      </section>
+    </div>
+    <section class="contact">
+      <h1 class="title">Contact <span class="subText">연락처</span></h1>
+      <a href="mailto:hyunwook02@icloud.com"><span class="subText">Email </span> hyunwook02@icloud.com</a>
+      <a href="tel:01066487274"><span class="subText">Phone</span> 010 6648 7274</a>
+      <a href="https://github.com/02-wooki"><span class="subText">Github</span> 02-wooki</a>
+    </section>
+  </div>
+</body>
+</html>
