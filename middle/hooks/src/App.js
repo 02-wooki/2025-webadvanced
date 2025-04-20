@@ -5,6 +5,7 @@ import Counter3 from './Components/UseEffect/Counter3';
 import MouseTracker from './Components/UseEffect/MouseTracker';
 import FetchData from './Components/UseEffect/FetchData';
 import Accommodate from './Components/Accommodate';
+import ExpensiveCalculation from './Components/UseMemo/ExpensiveCalculation';
 
 function App() {
   return (
@@ -35,6 +36,10 @@ function App() {
         <p>custum Hook 만들어서 사용하기</p>
         <Accommodate />
       </div>
+      <h1>useMemo 사용 예시</h1>
+        <div className='sect'>
+          <ExpensiveCalculation />
+        </div>
     </div>
   );
 }
