@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Container from './Components/children/Container';
+import CommentList from './Components/comment/CommentList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container>
+        <p>이 내용은 Container 내부에 포함</p>
+      </Container>
+      <Container>
+        <p>하하</p>
+      </Container>
+
+      <CommentList />
     </div>
   );
 }
