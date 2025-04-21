@@ -1,0 +1,19 @@
+.App {
+  padding: 20px;
+
+  background-color: #fdfdfd;
+
+  height: calc(100vh - 40px);
+  width: calc(100vw - 40px);
+}
+
+.sect {
+  padding: 0px 20px 20px 20px;
+
+  background-color: white;
+
+  border-radius: 20px;
+
+  width: calc(100vw - 80px);
+}
+
