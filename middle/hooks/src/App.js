@@ -6,8 +6,13 @@ import MouseTracker from './Components/UseEffect/MouseTracker';
 import FetchData from './Components/UseEffect/FetchData';
 import Accommodate from './Components/Accommodate';
 import ExpensiveCalculation from './Components/UseMemo/ExpensiveCalculation';
+import TodoApp from './Components/TodoApp';
+import TabMenu from './Components/TabMenu';
+import UserList from './Components/UserList';
 
 function App() {
+
+  const tmp = 'react';
   return (
     <div className='App'>
       <h1>useState 사용 예시</h1>
@@ -40,6 +45,15 @@ function App() {
         <div className='sect'>
           <ExpensiveCalculation />
         </div>
+
+      <hr />
+      <TodoApp />
+
+      <hr />
+      <TabMenu />
+
+      <hr />
+      <UserList />
     </div>
   );
 }
